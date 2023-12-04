@@ -64,9 +64,10 @@ public class KioskSystemUsingGUI {
         // 주문내역을 확인할수있는 텍스트 필드를 붙이고, 내용추가
         pn.add(ordertxt);
         ordertxt.append("<장바구니> \n\n");
-        ordertxt.setBounds(250, 900, 1000, 300); // 주문한내역을 볼수있는 txtarea를 생성
+        ordertxt.setBounds(1350, 300, 400, 600); // 주문한내역을 볼수있는 txtarea를 생성
         ordertxt.setEditable(false);
         ordertxt.setFont(new Font("맑은 고딕", Font.BOLD, 20));
+        ordertxt.setBackground(Color.orange);
 
         JTextArea listtxt = new JTextArea();
         listtxt.setBounds(0, 0, 1600, 600);
@@ -196,7 +197,7 @@ public class KioskSystemUsingGUI {
                             if (result == JOptionPane.OK_OPTION) {
                                 ordertxt.append((KioskSystem.porkMenus.get(0).toString()));
                                 KioskSystem.order.add(KioskSystem.porkMenus.get(0));
-                                KioskSystem.new_Price(1500);
+                                KioskSystem.new_Price(8000);
                             }
                         }
                     }
@@ -223,7 +224,7 @@ public class KioskSystemUsingGUI {
                             if (result == JOptionPane.OK_OPTION) {
                                 ordertxt.append((KioskSystem.porkMenus.get(1).toString()));
                                 KioskSystem.order.add(KioskSystem.porkMenus.get(1));
-                                KioskSystem.new_Price(2500);
+                                KioskSystem.new_Price(8000);
 
                             }
 
@@ -250,9 +251,9 @@ public class KioskSystemUsingGUI {
                             int result = JOptionPane.showConfirmDialog(poButton_치즈돈까스, "치즈돈까스를 주문하시겟습니까?", "주문확인",
                                     JOptionPane.OK_CANCEL_OPTION, JOptionPane.QUESTION_MESSAGE);
                             if (result == JOptionPane.OK_OPTION) {
-                                ordertxt.append((KioskSystem.porkMenus.get(1).toString()));
-                                KioskSystem.order.add(KioskSystem.porkMenus.get(1));
-                                KioskSystem.new_Price(2500);
+                                ordertxt.append((KioskSystem.porkMenus.get(2).toString()));
+                                KioskSystem.order.add(KioskSystem.porkMenus.get(2));
+                                KioskSystem.new_Price(9000);
 
                             }
 
@@ -264,11 +265,11 @@ public class KioskSystemUsingGUI {
                 poButton_왕돈까스
                         .setIcon(resizeImageIcon("C:\\Users\\admin\\OneDrive\\workspace\\kiosk\\images\\왕돈까스.png"));
                 poPanel.add(poButton_왕돈까스);
-                poButton_왕돈까스.setBounds(800, 20, 260, 195);
+                poButton_왕돈까스.setBounds(20, 245, 260, 195);
                 // 메뉴이름 띄어줄 텍스트 필드 생성
                 JTextField 왕돈까스 = new JTextField("왕돈까스 9000원");
                 poPanel.add(왕돈까스);
-                왕돈까스.setBounds(800, 215, 260, 30);
+                왕돈까스.setBounds(20, 440, 260, 30);
                 왕돈까스.setEditable(false);
                 // 왕돈까스를 누르면 알림창이 뜨게끔 설정
                 poButton_왕돈까스.addActionListener(new ActionListener() {
@@ -279,9 +280,9 @@ public class KioskSystemUsingGUI {
                             int result = JOptionPane.showConfirmDialog(poButton_왕돈까스, "왕돈까스를 주문하시겟습니까?", "주문확인",
                                     JOptionPane.OK_CANCEL_OPTION, JOptionPane.QUESTION_MESSAGE);
                             if (result == JOptionPane.OK_OPTION) {
-                                ordertxt.append((KioskSystem.porkMenus.get(1).toString()));
-                                KioskSystem.order.add(KioskSystem.porkMenus.get(1));
-                                KioskSystem.new_Price(2500);
+                                ordertxt.append((KioskSystem.porkMenus.get(3).toString()));
+                                KioskSystem.order.add(KioskSystem.porkMenus.get(3));
+                                KioskSystem.new_Price(9000);
 
                             }
 
@@ -293,11 +294,11 @@ public class KioskSystemUsingGUI {
                 poButton_치킨까스
                         .setIcon(resizeImageIcon("C:\\Users\\admin\\OneDrive\\workspace\\kiosk\\images\\치킨까스.png"));
                 poPanel.add(poButton_치킨까스);
-                poButton_치킨까스.setBounds(1060, 20, 260, 195);
+                poButton_치킨까스.setBounds(280, 245, 260, 195);
                 // 메뉴이름 띄어줄 텍스트 필드 생성
                 JTextField 치킨까스 = new JTextField("치킨까스 8000원");
                 poPanel.add(치킨까스);
-                치킨까스.setBounds(1060, 215, 260, 30);
+                치킨까스.setBounds(280, 440, 260, 30);
                 치킨까스.setEditable(false);
                 // 치킨까스를 누르면 알림창이 뜨게끔 설정
                 poButton_치킨까스.addActionListener(new ActionListener() {
@@ -308,9 +309,9 @@ public class KioskSystemUsingGUI {
                             int result = JOptionPane.showConfirmDialog(poButton_치킨까스, "치킨까스를 주문하시겟습니까?", "주문확인",
                                     JOptionPane.OK_CANCEL_OPTION, JOptionPane.QUESTION_MESSAGE);
                             if (result == JOptionPane.OK_OPTION) {
-                                ordertxt.append((KioskSystem.porkMenus.get(1).toString()));
-                                KioskSystem.order.add(KioskSystem.porkMenus.get(1));
-                                KioskSystem.new_Price(2500);
+                                ordertxt.append((KioskSystem.porkMenus.get(4).toString()));
+                                KioskSystem.order.add(KioskSystem.porkMenus.get(4));
+                                KioskSystem.new_Price(8000);
 
                             }
 
@@ -372,7 +373,7 @@ public class KioskSystemUsingGUI {
                             if (result == JOptionPane.OK_OPTION) {
                                 ordertxt.append((KioskSystem.mealMenus.get(0).toString()));
                                 KioskSystem.order.add(KioskSystem.mealMenus.get(0));
-                                KioskSystem.new_Price(2000);
+                                KioskSystem.new_Price(7000);
                             }
 
                         }
@@ -400,7 +401,7 @@ public class KioskSystemUsingGUI {
                             if (result == JOptionPane.OK_OPTION) {
                                 ordertxt.append((KioskSystem.mealMenus.get(1).toString()));
                                 KioskSystem.order.add(KioskSystem.mealMenus.get(1));
-                                KioskSystem.new_Price(2500);
+                                KioskSystem.new_Price(8000);
 
                             }
 
@@ -427,9 +428,9 @@ public class KioskSystemUsingGUI {
                             int result = JOptionPane.showConfirmDialog(meButton_김치볶음밥, "김치볶음밥을 주문하시겟습니까?", "주문확인",
                                     JOptionPane.OK_CANCEL_OPTION, JOptionPane.QUESTION_MESSAGE);
                             if (result == JOptionPane.OK_OPTION) {
-                                ordertxt.append((KioskSystem.mealMenus.get(1).toString()));
-                                KioskSystem.order.add(KioskSystem.mealMenus.get(1));
-                                KioskSystem.new_Price(2500);
+                                ordertxt.append((KioskSystem.mealMenus.get(2).toString()));
+                                KioskSystem.order.add(KioskSystem.mealMenus.get(2));
+                                KioskSystem.new_Price(7000);
 
                             }
 
@@ -489,7 +490,7 @@ public class KioskSystemUsingGUI {
                             if (result == JOptionPane.OK_OPTION) {
                                 ordertxt.append((KioskSystem.noodleMenus.get(0).toString()));
                                 KioskSystem.order.add(KioskSystem.noodleMenus.get(0));
-                                KioskSystem.new_Price(3000);
+                                KioskSystem.new_Price(7000);
                             }
                         }
                     }
@@ -515,7 +516,7 @@ public class KioskSystemUsingGUI {
                             if (result == JOptionPane.OK_OPTION) {
                                 ordertxt.append((KioskSystem.noodleMenus.get(1).toString()));
                                 KioskSystem.order.add(KioskSystem.noodleMenus.get(1));
-                                KioskSystem.new_Price(2500);
+                                KioskSystem.new_Price(7000);
 
                             }
 
@@ -541,9 +542,9 @@ public class KioskSystemUsingGUI {
                             int result = JOptionPane.showConfirmDialog(noButton_우동, "우동을 주문하시겟습니까?", "주문확인",
                                     JOptionPane.OK_CANCEL_OPTION, JOptionPane.QUESTION_MESSAGE);
                             if (result == JOptionPane.OK_OPTION) {
-                                ordertxt.append((KioskSystem.noodleMenus.get(1).toString()));
-                                KioskSystem.order.add(KioskSystem.noodleMenus.get(1));
-                                KioskSystem.new_Price(2500);
+                                ordertxt.append((KioskSystem.noodleMenus.get(2).toString()));
+                                KioskSystem.order.add(KioskSystem.noodleMenus.get(2));
+                                KioskSystem.new_Price(7000);
 
                             }
 
@@ -554,11 +555,11 @@ public class KioskSystemUsingGUI {
                 JButton noButton_쫄면 = new JButton("");
                 noButton_쫄면.setIcon(resizeImageIcon("C:\\Users\\admin\\OneDrive\\workspace\\kiosk\\images\\쫄면.png"));
                 noPanel.add(noButton_쫄면);
-                noButton_쫄면.setBounds(800, 20, 260, 195);
+                noButton_쫄면.setBounds(20, 245, 260, 195);
                 // 메뉴이름 띄어줄 텍스트 필드 생성
                 JTextField 쫄면 = new JTextField("쫄면  7000원");
                 noPanel.add(쫄면);
-                쫄면.setBounds(800, 215, 260, 30);
+                쫄면.setBounds(20, 440, 260, 30);
                 쫄면.setEditable(false);
                 // 쫄면를 누르면 알림창이 뜨게끔 설정
                 noButton_쫄면.addActionListener(new ActionListener() {
@@ -569,9 +570,9 @@ public class KioskSystemUsingGUI {
                             int result = JOptionPane.showConfirmDialog(noButton_쫄면, "쫄면을 주문하시겟습니까?", "주문확인",
                                     JOptionPane.OK_CANCEL_OPTION, JOptionPane.QUESTION_MESSAGE);
                             if (result == JOptionPane.OK_OPTION) {
-                                ordertxt.append((KioskSystem.noodleMenus.get(1).toString()));
-                                KioskSystem.order.add(KioskSystem.noodleMenus.get(1));
-                                KioskSystem.new_Price(2500);
+                                ordertxt.append((KioskSystem.noodleMenus.get(3).toString()));
+                                KioskSystem.order.add(KioskSystem.noodleMenus.get(3));
+                                KioskSystem.new_Price(7000);
 
                             }
 
@@ -628,9 +629,9 @@ public class KioskSystemUsingGUI {
                             int result = JOptionPane.showConfirmDialog(siButton_새우튀김, "새우튀김(2ps)을 주문하시겟습니까?", "주문확인",
                                     JOptionPane.OK_CANCEL_OPTION, JOptionPane.QUESTION_MESSAGE);
                             if (result == JOptionPane.OK_OPTION) {
-                                ordertxt.append((KioskSystem.sideMenus.get(1).toString()));
-                                KioskSystem.order.add(KioskSystem.sideMenus.get(1));
-                                KioskSystem.new_Price(2500);
+                                ordertxt.append((KioskSystem.sideMenus.get(0).toString()));
+                                KioskSystem.order.add(KioskSystem.sideMenus.get(0));
+                                KioskSystem.new_Price(3000);
 
                             }
 
@@ -659,7 +660,7 @@ public class KioskSystemUsingGUI {
                             if (result == JOptionPane.OK_OPTION) {
                                 ordertxt.append((KioskSystem.sideMenus.get(1).toString()));
                                 KioskSystem.order.add(KioskSystem.sideMenus.get(1));
-                                KioskSystem.new_Price(2500);
+                                KioskSystem.new_Price(4000);
 
                             }
 
@@ -685,9 +686,9 @@ public class KioskSystemUsingGUI {
                             int result = JOptionPane.showConfirmDialog(siButton_고로케, "감자 고로케를 주문하시겟습니까?", "주문확인",
                                     JOptionPane.OK_CANCEL_OPTION, JOptionPane.QUESTION_MESSAGE);
                             if (result == JOptionPane.OK_OPTION) {
-                                ordertxt.append((KioskSystem.sideMenus.get(1).toString()));
-                                KioskSystem.order.add(KioskSystem.sideMenus.get(1));
-                                KioskSystem.new_Price(2500);
+                                ordertxt.append((KioskSystem.sideMenus.get(2).toString()));
+                                KioskSystem.order.add(KioskSystem.sideMenus.get(2));
+                                KioskSystem.new_Price(4000);
 
                             }
 
@@ -698,11 +699,11 @@ public class KioskSystemUsingGUI {
                 JButton siButton_공기밥 = new JButton("");
                 siButton_공기밥.setIcon(resizeImageIcon("C:\\Users\\admin\\OneDrive\\workspace\\kiosk\\images\\공기밥.png"));
                 siPanel.add(siButton_공기밥);
-                siButton_공기밥.setBounds(800, 20, 260, 195);
+                siButton_공기밥.setBounds(20, 245, 260, 195);
                 // 메뉴이름 띄어줄 텍스트 필드 생성
                 JTextField 공기밥 = new JTextField("공기밥  1000원");
                 siPanel.add(공기밥);
-                공기밥.setBounds(800, 215, 260, 30);
+                공기밥.setBounds(20, 440, 260, 30);
                 공기밥.setEditable(false);
                 // 공기밥를 누르면 알림창이 뜨게끔 설정
                 siButton_공기밥.addActionListener(new ActionListener() {
@@ -713,9 +714,9 @@ public class KioskSystemUsingGUI {
                             int result = JOptionPane.showConfirmDialog(siButton_공기밥, "공기밥을 주문하시겟습니까?", "주문확인",
                                     JOptionPane.OK_CANCEL_OPTION, JOptionPane.QUESTION_MESSAGE);
                             if (result == JOptionPane.OK_OPTION) {
-                                ordertxt.append((KioskSystem.sideMenus.get(1).toString()));
-                                KioskSystem.order.add(KioskSystem.sideMenus.get(1));
-                                KioskSystem.new_Price(2500);
+                                ordertxt.append((KioskSystem.sideMenus.get(3).toString()));
+                                KioskSystem.order.add(KioskSystem.sideMenus.get(3));
+                                KioskSystem.new_Price(1000);
 
                             }
 
@@ -771,9 +772,9 @@ public class KioskSystemUsingGUI {
                             int result = JOptionPane.showConfirmDialog(drButton_콜라, "콜라를 주문하시겟습니까?", "주문확인",
                                     JOptionPane.OK_CANCEL_OPTION, JOptionPane.QUESTION_MESSAGE);
                             if (result == JOptionPane.OK_OPTION) {
-                                ordertxt.append((KioskSystem.drinkMenus.get(1).toString()));
-                                KioskSystem.order.add(KioskSystem.drinkMenus.get(1));
-                                KioskSystem.new_Price(2500);
+                                ordertxt.append((KioskSystem.drinkMenus.get(0).toString()));
+                                KioskSystem.order.add(KioskSystem.drinkMenus.get(0));
+                                KioskSystem.new_Price(2000);
 
                             }
 
@@ -802,7 +803,7 @@ public class KioskSystemUsingGUI {
                             if (result == JOptionPane.OK_OPTION) {
                                 ordertxt.append((KioskSystem.drinkMenus.get(1).toString()));
                                 KioskSystem.order.add(KioskSystem.drinkMenus.get(1));
-                                KioskSystem.new_Price(2500);
+                                KioskSystem.new_Price(2000);
 
                             }
 
@@ -828,9 +829,9 @@ public class KioskSystemUsingGUI {
                             int result = JOptionPane.showConfirmDialog(drButton_사이다, "사이다를 주문하시겟습니까?", "주문확인",
                                     JOptionPane.OK_CANCEL_OPTION, JOptionPane.QUESTION_MESSAGE);
                             if (result == JOptionPane.OK_OPTION) {
-                                ordertxt.append((KioskSystem.drinkMenus.get(1).toString()));
-                                KioskSystem.order.add(KioskSystem.drinkMenus.get(1));
-                                KioskSystem.new_Price(2500);
+                                ordertxt.append((KioskSystem.drinkMenus.get(2).toString()));
+                                KioskSystem.order.add(KioskSystem.drinkMenus.get(2));
+                                KioskSystem.new_Price(2000);
 
                             }
 
@@ -841,11 +842,11 @@ public class KioskSystemUsingGUI {
                 JButton drButton_환타 = new JButton("");
                 drButton_환타.setIcon(resizeImageIcon("C:\\Users\\admin\\OneDrive\\workspace\\kiosk\\images\\환타.png"));
                 drPanel.add(drButton_환타);
-                drButton_환타.setBounds(800, 20, 260, 195);
+                drButton_환타.setBounds(20, 245, 260, 195);
                 // 메뉴이름 띄어줄 텍스트 필드 생성
                 JTextField 환타 = new JTextField("환타  2000원");
                 drPanel.add(환타);
-                환타.setBounds(800, 215, 260, 30);
+                환타.setBounds(20, 440, 260, 30);
                 환타.setEditable(false);
                 // 환타를 누르면 알림창이 뜨게끔 설정
                 drButton_환타.addActionListener(new ActionListener() {
@@ -856,9 +857,9 @@ public class KioskSystemUsingGUI {
                             int result = JOptionPane.showConfirmDialog(drButton_환타, "환타를 주문하시겟습니까?", "주문확인",
                                     JOptionPane.OK_CANCEL_OPTION, JOptionPane.QUESTION_MESSAGE);
                             if (result == JOptionPane.OK_OPTION) {
-                                ordertxt.append((KioskSystem.drinkMenus.get(1).toString()));
-                                KioskSystem.order.add(KioskSystem.drinkMenus.get(1));
-                                KioskSystem.new_Price(2500);
+                                ordertxt.append((KioskSystem.drinkMenus.get(3).toString()));
+                                KioskSystem.order.add(KioskSystem.drinkMenus.get(3));
+                                KioskSystem.new_Price(2000);
 
                             }
 
@@ -953,7 +954,7 @@ public class KioskSystemUsingGUI {
             private void Custmoer_Order() {
 
                 Menu m;
-                listtxt.append("------------------------모든 주문 리스트-------------------------\n");
+                listtxt.append("-------------------------- 주문 리스트 --------------------------\n");
 
                 // 모든 주문리스트를 불러옴
                 for (int i = 0; i < KioskSystem.getNumOrders(); i++) {
