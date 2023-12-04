@@ -19,7 +19,7 @@ public class Menu {
 
     public String toString() {
 
-        return "주문 :" + product_name + "      	 가격 :" + price + "원 \n";
+        return "주문 :" + product_name + "      가격 :" + price + "원 \n";
     }
 
     public int val() {
