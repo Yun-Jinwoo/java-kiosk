@@ -69,7 +69,7 @@ public class KioskSystem {
             m = KioskSystem.getOrder(i);
             sum = sum + m.val();
         }
-        return "총 가격 :" + sum + "원";
+        return "총 가격 :" + sum + "원\n\n";
     }
 
     // 이미지 크기조절하기!
@@ -104,7 +104,7 @@ public class KioskSystem {
     }
 
     private static void addToDrink(Menu new_drinkMenus) {
-        porkMenus.add(new_drinkMenus);
+        drinkMenus.add(new_drinkMenus);
 
     }
 
@@ -132,7 +132,7 @@ public class KioskSystem {
     }
 
     @SuppressWarnings("unused")
-    private static void new_Order_HotDrink(Menu new_porkMenus) {
+    private static void new_Order_PorkMenus(Menu new_porkMenus) {
         order.add(new_porkMenus);
     }
 
