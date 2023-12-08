@@ -73,6 +73,7 @@ public class KioskSystemUsingGUI {
         JButton[] bt = new JButton[9];
         JButton order_bt = new JButton("주문하기");
         JButton reset_bt = new JButton("초기화");
+        JButton start_bt = new JButton("화면을 터치해주세요!");
 
         // 메뉴판 테이블 만들기
         String[] heading = new String[] { "상품명", "가격" };
@@ -1054,8 +1055,42 @@ public class KioskSystemUsingGUI {
 
             }
         });
+
+        start_bt.setFont(new Font("돋움", Font.PLAIN, 100));
+        start_bt.setBounds(0, 0, 1700, 1100);
+        start_bt.setBackground(Color.WHITE); // 배경색을 검은색으로 설정
+        start_bt.setForeground(Color.BLACK); // 글자색을 흰색으로 설정
+
+        pn.add(start_bt);
+        start_bt.addActionListener(new ActionListener() {
+
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                // 시작 버튼 클릭 시 실행할 내용들을 여기에 작성
+                poPanel.setVisible(false);
+                mePanel.setVisible(false);
+                noPanel.setVisible(false);
+                siPanel.setVisible(false);
+                drPanel.setVisible(false);
+                orPanel.setVisible(false);
+                ordertxt.setVisible(false);
+
+                scrollPane.setVisible(true);
+                order_bt.setVisible(false);
+                reset_bt.setVisible(false);
+                start_bt.setVisible(false);
+            }
+        });
+
         // 첫 화면에는 주문기능 보이지 않게하기
+        poPanel.setVisible(false);
+        mePanel.setVisible(false);
+        noPanel.setVisible(false);
+        siPanel.setVisible(false);
+        drPanel.setVisible(false);
+        orPanel.setVisible(false);
         ordertxt.setVisible(false);
+        scrollPane.setVisible(false);
         order_bt.setVisible(false);
         reset_bt.setVisible(false);
 
