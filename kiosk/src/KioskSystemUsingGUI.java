@@ -1,9 +1,6 @@
-import java.awt.Color;
-import java.awt.Font;
-import java.awt.Graphics;
-import java.awt.Image;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.*;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JFrame;
@@ -45,6 +42,7 @@ public class KioskSystemUsingGUI {
     }
 
     public static void main(String[] args) {
+
         JFrame fr = new JFrame("식당 메뉴 키오스크");
         // 이미지 패널 그리기
         ImagePanel pn = new ImagePanel(
@@ -57,7 +55,6 @@ public class KioskSystemUsingGUI {
         JPanel siPanel = new JPanel(); // 디저트 메뉴를 띄우는 패널
         JPanel drPanel = new JPanel(); // 음료 메뉴
         JPanel orPanel = new JPanel(); // 주문 메뉴
-
         // 주문내역
         JTextArea ordertxt = new JTextArea();
 
@@ -70,11 +67,12 @@ public class KioskSystemUsingGUI {
         ordertxt.setBackground(Color.orange);
 
         JTextArea listtxt = new JTextArea();
-        listtxt.setBounds(0, 0, 1600, 600);
+        listtxt.setBounds(0, 0, 800, 300);
         listtxt.setFont(new Font("맑은 고딕", Font.BOLD, 12));
 
-        JButton[] bt = new JButton[7];
+        JButton[] bt = new JButton[9];
         JButton order_bt = new JButton("주문하기");
+        JButton reset_bt = new JButton("초기화");
 
         // 메뉴판 테이블 만들기
         String[] heading = new String[] { "상품명", "가격" };
@@ -111,10 +109,10 @@ public class KioskSystemUsingGUI {
         table.setRowHeight(50);
 
         // 버튼들 위치와 크기 설정
-        int width[] = { 300, 300, 300, 300, 300, 200, 200 };
-        int height[] = { 150, 150, 150, 150, 150, 100, 100 };
-        int x[] = { 80, 380, 680, 980, 1280, 30, 30 };
-        int y[] = { 100, 100, 100, 100, 100, 300, 500 };
+        int width[] = { 300, 300, 300, 300, 300, 200, 200, 200, 200 };
+        int height[] = { 150, 150, 150, 150, 150, 100, 100, 100, 100 };
+        int x[] = { 80, 380, 680, 980, 1280, 30, 30, 30, 30 };
+        int y[] = { 100, 100, 100, 100, 100, 300, 500, 700, 900 };
 
         // 이미지 패널 크기설정
         pn.setLayout(null);
@@ -129,7 +127,9 @@ public class KioskSystemUsingGUI {
         bt[3] = new JButton("사이드");
         bt[4] = new JButton("음료");
         bt[5] = new JButton("메인");
-        bt[6] = new JButton("리스트");
+        bt[6] = new JButton("주문 내역");
+        bt[7] = new JButton("글자 크게");
+        bt[8] = new JButton("글자 작게");
 
         for (int i = 0; i < bt.length; i++) {
             pn.add(bt[i]);
@@ -142,6 +142,9 @@ public class KioskSystemUsingGUI {
             bt[i].setFocusPainted(false);
             bt[i].setForeground(Color.WHITE);
         }
+        bt[6].setFont(new Font("맑은 고딕", Font.BOLD, 35));
+        bt[7].setFont(new Font("맑은 고딕", Font.BOLD, 35));
+        bt[8].setFont(new Font("맑은 고딕", Font.BOLD, 35));
 
         // 버튼 0번의 기능설정
         bt[0].addActionListener(new ActionListener() {
@@ -168,6 +171,8 @@ public class KioskSystemUsingGUI {
 
                     scrollPane.setVisible(false);
                     order_bt.setVisible(true);
+                    reset_bt.setVisible(true);
+
                 }
             }
 
@@ -347,6 +352,7 @@ public class KioskSystemUsingGUI {
 
                     scrollPane.setVisible(false);
                     order_bt.setVisible(true);
+                    reset_bt.setVisible(true);
                 }
             }
 
@@ -465,6 +471,7 @@ public class KioskSystemUsingGUI {
 
                     scrollPane.setVisible(false);
                     order_bt.setVisible(true);
+                    reset_bt.setVisible(true);
                 }
             }
 
@@ -605,6 +612,7 @@ public class KioskSystemUsingGUI {
 
                     scrollPane.setVisible(false);
                     order_bt.setVisible(true);
+                    reset_bt.setVisible(true);
                 }
             }
 
@@ -749,6 +757,7 @@ public class KioskSystemUsingGUI {
 
                     scrollPane.setVisible(false);
                     order_bt.setVisible(true);
+                    reset_bt.setVisible(true);
                 }
             }
 
@@ -888,6 +897,7 @@ public class KioskSystemUsingGUI {
 
                     scrollPane.setVisible(true);
                     order_bt.setVisible(false);
+                    reset_bt.setVisible(false);
                 }
 
             }
@@ -912,6 +922,7 @@ public class KioskSystemUsingGUI {
 
                     scrollPane.setVisible(false);
                     order_bt.setVisible(false);
+                    reset_bt.setVisible(false);
 
                     orPanel.add(listtxt);
                     orPanel.setBounds(250, 300, 1600, 600);
@@ -923,9 +934,60 @@ public class KioskSystemUsingGUI {
 
         });
 
+        bt[7].addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                // 여기에 JTextField 객체를 찾는 코드 추가
+                JButton srcBtn = (JButton) e.getSource();
+                if (srcBtn == bt[7]) {
+                    ordertxt.setFont(new Font("맑은 고딕", Font.BOLD, 20));
+                    listtxt.setFont(new Font("맑은 고딕", Font.BOLD, 20));
+                    JPanel[] panels = { poPanel, mePanel, noPanel, siPanel, drPanel };
+
+                    // 각 패널에 대해 반복문 실행
+                    for (JPanel panel : panels) {
+                        // 각 패널의 컴포넌트들을 가져와서 작업 수행
+                        Component[] components = panel.getComponents();
+                        for (Component component : components) {
+                            if (component instanceof JTextField) {
+                                JTextField textField = (JTextField) component;
+                                // 텍스트 필드의 글자 크기를 늘리기
+                                textField.setFont(new Font("맑은 고딕", Font.BOLD, 20));
+                            }
+                        }
+                    }
+                }
+            }
+        });
+
+        bt[8].addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                // 여기에 JTextField 객체를 찾는 코드 추가
+                JButton srcBtn = (JButton) e.getSource();
+                if (srcBtn == bt[8]) {
+                    ordertxt.setFont(new Font("맑은 고딕", Font.PLAIN, 20));
+                    listtxt.setFont(new Font("맑은 고딕", Font.PLAIN, 12));
+                    JPanel[] panels = { poPanel, mePanel, noPanel, siPanel, drPanel };
+
+                    for (JPanel panel : panels) {
+                        // 각 패널의 컴포넌트들을 가져와서 작업 수행
+                        Component[] components = panel.getComponents();
+                        for (Component component : components) {
+                            if (component instanceof JTextField) {
+                                JTextField textField = (JTextField) component;
+                                // 텍스트 필드의 글자 크기를 늘리기
+                                textField.setFont(new Font("맑은 고딕", Font.PLAIN, 15));
+                            }
+                        }
+                    }
+                }
+            }
+        });
+
         // 주문담기 버튼 추가 및 설정
         order_bt.setFont(new Font("돋움", Font.PLAIN, 25));
-        order_bt.setBounds(1250, 900, 500, 150);
+        order_bt.setBounds(1200, 900, 250, 150);
         pn.add(order_bt); // 주문담기 버튼 생성 및 출력
         order_bt.addActionListener(new ActionListener() {
 
@@ -968,10 +1030,34 @@ public class KioskSystemUsingGUI {
             }
 
         });
+        reset_bt.setFont(new Font("돋움", Font.PLAIN, 25));
+        reset_bt.setBounds(1450, 900, 250, 150);
+        pn.add(reset_bt); // 주문담기 버튼 생성 및 출력
+        reset_bt.addActionListener(new ActionListener() {
 
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                JButton srcBtn = (JButton) e.getSource();
+                if (srcBtn == reset_bt) {
+                    int result = JOptionPane.showConfirmDialog(order_bt, "장바구니를 초기화하겠습니까?", "초기화",
+                            JOptionPane.OK_CANCEL_OPTION, JOptionPane.QUESTION_MESSAGE);
+                    if (result == JOptionPane.OK_OPTION) {
+
+                        // 주문담기 버튼을 누르면 주문내역,총 주문비용 을 모두 지우고 다시 주문문구 생성
+                        ordertxt.setText("");
+                        ordertxt.append("<장바구니> \n\n");
+                        KioskSystem.order.removeAllElements();
+                        KioskSystem.price.removeAllElements();
+
+                    }
+                }
+
+            }
+        });
         // 첫 화면에는 주문기능 보이지 않게하기
         ordertxt.setVisible(false);
         order_bt.setVisible(false);
+        reset_bt.setVisible(false);
 
         // 프레임 설정
         fr.setLocation(0, 0);
